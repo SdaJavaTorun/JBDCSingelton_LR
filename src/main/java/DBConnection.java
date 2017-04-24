@@ -10,7 +10,8 @@ public class DBConnection {
     public static DBConnection instance;
     public static final String JBDC_DRIVER = "com.mysql.cj.jdbc.Driver";
     public static final String DB_URL
-            = "jdbc:mysql://localhost/ksiegarnia?useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+            = "jdbc:mysql://localhost/ksiegarnia?useSSL=false&useJDBCCompliant" +
+            "TimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 
     public static final String USER = "root";
     public static final String PASSWORD = "";
@@ -35,16 +36,5 @@ public class DBConnection {
         }
     }
 
-    public static void close(Connection connection)
-    {
-        try {
-            if (connection != null) {
-                connection.close();
-                connection=null;
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
 
 }
